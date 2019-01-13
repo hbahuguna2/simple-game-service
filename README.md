@@ -24,7 +24,7 @@ Steps:
 Tasks:
 1.Create a branch using Git.
 2.Write the follwong functional tests in your favorite programming language :
-    a. Verify that the text is "Playing Sudoku is fun!", when no query parameter is provided.
-    b. Verify that the id increases by 1 every time we hit the server.
-    c. Verify that the text is "Playing Chess is fun!", when Chess is set as the name query parameter.     
+   Verify that the text is "Playing Sudoku is fun!", when no query parameter is provided.
+   Verify that the id increases by 1 every time we hit the server.
+   Verify that the text is "Playing Chess is fun!", when Chess is set as the name query parameter.     
 3. Open a pull request for code review.
