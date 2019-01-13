@@ -1,10 +1,10 @@
 # simple-game-service
 This is very simple service that returns an id and text for a game that is requested in the 'name' query parameter.
-e.g. http://localhost:8080/game?name=Chess should return the following json:
-{"id":<some number>,"text":"<some string>"}
+e.g. http://localhost:8080/game?name=Chess should return json containing following fields:
+{"id":some number,"text":"some string"}
 
-If there is no query parameter then it returns Sudoku by default, e.g.  http://localhost:8080/game should return the following json:
-{"id":<some number>,"text":"<some string>"}
+If there is no query parameter then the game endpoint by default sets game to Sudoku, e.g.  http://localhost:8080/game should return json containing following fields:
+{"id":some number,"text":"some string"}
 
 id is a counter that increases by a certain amount every time a request is made to the server.
 
