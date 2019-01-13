@@ -1,4 +1,5 @@
 # simple-game-service
+# making changes to README
 This is very simple service that returns an id and text for a game that is requested in the 'name' query parameter.
 e.g. http://localhost:8080/game?name=Chess should return the following json:
 {"id":1,"text":"Playing Chess is fun!"}
