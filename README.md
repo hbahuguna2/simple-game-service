@@ -1,13 +1,12 @@
 # simple-game-service
-# making changes to README
 This is very simple service that returns an id and text for a game that is requested in the 'name' query parameter.
 e.g. http://localhost:8080/game?name=Chess should return the following json:
-{"id":1,"text":"Playing Chess is fun!"}
+{"id":<some number>,"text":"<some string>"}
 
 If there is no query parameter then it returns Sudoku by default, e.g.  http://localhost:8080/game should return the following json:
-{"id":1,"text":"Playing Sudoku is fun!"}
+{"id":<some number>,"text":"<some string>"}
 
-id is a counter that increases by 1 every time a request is made to the server.
+id is a counter that increases by a certain amount every time a request is made to the server.
 
 Prerequisites:
 1. Git
@@ -25,7 +24,7 @@ Steps:
 Tasks:
 1. Create a branch using Git.
 2. Write the follwong functional tests in your favorite programming language :
-    1. Verify that the text is "Playing Sudoku is fun!", when no query parameter is provided.
-    2. Verify that the id increases by 1 every time we hit the server.
-    3. Verify that the text is "Playing Chess is fun!", when Chess is set as the name query parameter. 
+    1. Find out the text that is displayed when the game endpoint is accessed without a query parameter. Write a test to verify that this text is displayed when the game endpoint is accessed without a query parameter.  
+    2. Find out the id after hitting game endpoint 7 times. If id increases in a certain pattern, write a test to verify that the game endpoint follows the pattern you have determined.
+    3. Find out the text that is displayed when game endpoint is accessed with a name query parameter. Write a test to verify that this text is displayed when the game endpoint is accessed with the name query parameter.
 3. Open a pull request for code review.
