@@ -1,4 +1,5 @@
 # simple-game-service
+
 This is very simple service that returns an id and text for a game that is requested in the 'name' query parameter.
 e.g. http://localhost:8080/game?name=Chess should return json containing following fields:
 {"id":some number,"text":"some string"}
