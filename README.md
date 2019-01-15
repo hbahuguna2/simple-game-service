@@ -23,7 +23,7 @@ Steps:
 4. Access the server using an http client. e.g. use a browser to get to http://localhost:8080/game 
 
 Tasks:
-1. Create a branch using Git. e.g. git checkout -b <your-branch-name>
+1. Create a branch using Git. e.g. git checkout -b `<your-branch-name`>
 2. Write the follwong functional tests in your favorite programming language :
     1. Find out the text that is displayed when the game endpoint is accessed without a query parameter. Write a test to verify that this text is displayed when the game endpoint is accessed without a query parameter.  
     2. Find out the id after hitting game endpoint 7 times. If id increases in a certain pattern, write a test to verify that the game endpoint follows the pattern you have determined.
@@ -31,4 +31,4 @@ Tasks:
 3. Open a pull request for code review. Use the following git commands if required: 
 	1. git add .
 	2. git commit -m 'adding tests'
-	3. git push --set-upstream origin <your-branch-name>
+	3. git push --set-upstream origin `<your-branch-name`>
