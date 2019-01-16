@@ -22,34 +22,29 @@ WebDriver driver;
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.get("http://localhost:8080/game");
 		
 	}
 	
 	@Test
 	public void textVerification() {
 		
-		driver.get("http://localhost:8080/game");
 		
-		//Task#1.1: Find out the text that is displayed when the game endpoint is accessed without a query parameter.
-		
-		String actualText = driver.findElement(By.xpath("/html/body/pre")).getText();
-		
+		//Task#1.1: Find out the text that is displayed when the game endpoint is accessed without a query parameter.		
+		String actualText = driver.findElement(By.xpath("/html/body/pre")).getText();		
 		actualText = actualText.replaceAll("\"id", "").replaceAll("[0-9,\"-]", "").replaceAll(":text:","").replaceAll("[{}]","");
-		String expectedChar = "Playing Sudoku is fun!";
 		
 		//Display the text
-		System.out.println("Displayed Text without query parameter: " +actualText);
+		System.out.println("Displayed Text without query parameter is: " +actualText);
 		
 		//#Task1.2: verify that this text is displayed when the game endpoint is accessed without a query parameter.
-		Assert.assertEquals(actualText, expectedChar);
+		Assert.assertEquals(actualText, "Playing Sudoku is fun!", "Text does not match");
 		
 	}
 	
 	@Test
 	public void gameID() {
-		
-		driver.get("http://localhost:8080/game");
-		 
+
 		//Task#2.1: Find out the id after hitting game endpoint 7 times.
 		//Task#2.2: If id increases in a certain pattern, write a test to verify that the game endpoint follows the pattern you have determined.
 		
@@ -61,22 +56,22 @@ WebDriver driver;
 	             * to the first number and assigning the sum of last two
 	             * numbers to the second number i.e. 0+1, 1+0 , 1+1, 1+2, 3+2 and so on.....
 	             */
-	        	 String getId = driver.findElement(By.xpath("/html/body/pre")).getText();
-	        	 getId = getId.replaceAll("[^0-9]", ""); 	        	
-	     	     int getId1 = Integer.valueOf(getId);	     	     
+	        	String getId = driver.findElement(By.xpath("/html/body/pre")).getText();
+	        	getId = getId.replaceAll("[^0-9]", ""); 	        	
+	     	    int getId1 = Integer.valueOf(getId);	     	     
 	     		
 	            int sum = getId1 + nextNumber;
 	            getId1 = nextNumber;
 	            nextNumber = sum;
 	           
-	            //Print the ID after hitting game endpoint 7 times 
-	           if (i == 7)
-	           {
-	              System.out.print("Seventh ID: "+ getId);	              
-	              break;
-	           }
+	            //Print the ID after hitting game endpoint 7 times .
+	            if (i == 7)
+	             {
+	               System.out.print("Seventh ID is: "+ getId);	              
+	               break;
+	             }
 	           
-	          driver.navigate().refresh();
+	            driver.navigate().refresh();
 	          
 	        }
 	}
@@ -84,20 +79,18 @@ WebDriver driver;
 	@Test
 	public void newGameName() {
 		
-          driver.get("http://localhost:8080/game?name=cricket");
-          
+		driver.navigate().to("http://localhost:8080/game?name=cricket");          
           
 		//Task#3.1:Find out the text that is displayed when game endpoint is accessed with a name query parameter.
           
 		String textWithName = driver.findElement(By.xpath("/html/body/pre")).getText();
 		textWithName = textWithName.replaceAll("\"id", "").replaceAll("[0-9,\"-]", "").replaceAll(":text:","").replaceAll("[{}]","");
-		String expectedChar = "Playing cricket is fun!";
 		
 		//Print the text that is displayed.
-		System.out.println(textWithName);
+		System.out.println("Displayed Text with query parameter is: " +textWithName);
 		
 		//verify that text is displayed when the game endpoint is accessed with the name query parameter.
-		Assert.assertEquals(textWithName, expectedChar);
+		Assert.assertEquals(textWithName, "Playing cricket is fun!","Text does not match with name query parameter");
 		
 	}
 	
