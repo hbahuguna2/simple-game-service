@@ -19,7 +19,7 @@ Prerequisites:
 Steps:
 1. Fork the repo in github.com using your github account. If you dont have a github account, please create one and then fork the repo.
 2. Once you fork the repo, it should be available on your account now. Click the 'Clone or Download' button to copy the link.
-3. Clone the repo on your machine. e.g. git clone https://github.com/<your-user-name>/simple-game-service.git
+3. Clone the repo on your machine. e.g. git clone https://github.com/`<your-user-name`>/simple-game-service.git
 4. Use a build tool such as maven or gradle (binaries are provided in the repo for help but its not necessary to use them) to produce a jar file. e.g. ./mvnw clean install
 5. Run the jar using java cmd. e.g. java -jar target/simple-game-service-0.1.0.jar
 6. Access the server using an http client. e.g. use a browser to get to http://localhost:8080/game 
@@ -33,7 +33,7 @@ Tasks:
 	1. git add .
 	2. git commit -m 'adding tests'
 	3. git push
-	4. Head on over to the repository on GitHub.com where your project lives. e.g. https://github.com/<your-user-name>/simple-game-service
+	4. Head on over to the repository on GitHub.com where your project lives. e.g. https://github.com/`<your-user-name`>/simple-game-service
 	5. You will see a msg 'This branch is 1 commit ahead of hbahuguna2:master' below 'Clone or download' green button.  
 	6. Clicking on 'Pull Request' link next to msg above sends you to a page where you can compare changes. Click 'Create pull request' button and enter a title and optional description.
 	7. When you’re ready typing out title and description, click on 'Create pull request'. This should create a Pull Request and we should be able to review it.
